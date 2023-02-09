@@ -17,7 +17,8 @@
   <link rel="dns-prefetch" href="https://s0.pstatp.com/" /> 
   <link rel="dns-prefetch" href="https://s1.pstatp.com/" /> 
   <link rel="dns-prefetch" href="https://s2.pstatp.com/" /> 
-  <link href="../../mapi.css" rel="stylesheet" /> 
+  {{ $css := resources.Get "mapi.css" | resources.Fingerprint "md5"}}
+  <link rel="stylesheet" href="{{ $css.Permalink }}"  /> 
   <title>{{.Params.product}}隐私政策</title> 
   <script>
       !function(e){function t(){var t=l.getBoundingClientRect().width;375<t/n&&(t=375*n),t/=16,l.style.fontSize=t+"px",e.rem=t}function i(e,t,i,n){var a;return function(){var r=n||this,o=arguments,d=i&&!a;clearTimeout(a),a=setTimeout((function(){a=null,i||e.apply(r,o)}),t),d&&e.apply(r,o)}}var n,a,r,o=e.document,d=e.navigator,l=o.documentElement,c=o.querySelector('meta[name="viewport"]');r=o.querySelector('meta[name="flexible"]'),c?(r=c.getAttribute("content").match(/initial-scale=(["']?)([d.]+)(["']?)/))&&(a=parseFloat(r[2]),n=parseInt(1/a)):r&&(r=r.getAttribute("content").match(/initial-dpr=(["']?)([d.]+)(["']?)/))&&(n=parseFloat(j[2]),a=parseFloat((1/n).toFixed(2))),!n&&!a&&(n=e.devicePixelRatio,a=1/(n=d.appVersion.match(/android/gi)||d.appVersion.match(/iphone/gi)?3<=n?3:2<=n?2:1:1)),l.setAttribute("data-dpr",n),c||(a='<meta name="viewport" content="width=device-width, initial-scale='+a+", maximum-scale="+a+", minimum-scale="+a+', user-scalable=no" />',l.firstElementChild?((d=o.createElement("div")).innerHTML=a,l.firstElementChild.appendChild(d.firstChild)):o.write(a)),e.dpr=n,e.addEventListener("resize",i(t,50),!1),e.addEventListener("pageshow",i((function(e){e.persisted&&t()}),300),!1),"complete"===o.readyState?o.body.style.fontSize=16*1+"px":o.addEventListener("DOMContentLoaded",(function(){o.body.style.fontSize=16*1+"px"}),!1),t()}(window);
