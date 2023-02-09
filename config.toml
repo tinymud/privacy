@@ -9,4 +9,4 @@ enableEmoji = true
 enableInlineShortcodes = true
 enableRobotsTXT = true
 relativeURLs = true
-disableKinds = ["RSS"]
+disableKinds = ["RSS", "sitemap"]
